@@ -86,8 +86,8 @@ function buildAndShowHomeHTML (categories) {
     var html = homeHtml;
     var chosenCategoryShortName  = chooseRandomCategory(categories);
     var homeHtmlToInsertIntoMainPage = insertProperty(html, "name", chosenCategoryShortName);
-    html += homeHtmlToInsertIntoMainPage;
-    document.querySelector("#main-content").innerHTML = html;
+    
+    document.querySelector("#main-content").innerHTML = homeHtmlToInsertIntoMainPage;
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
