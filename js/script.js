@@ -76,13 +76,19 @@ $ajaxUtils.sendGetRequest(
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
 
-  // Modified by Meenambiga 
+
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
     function (homeHtml) {
-    document.querySelector("#main-content")
-      .innerHTML = homeHtml;
+    //document.querySelector("#main-content").innerHTML = homeHtml;
+
+    var html = homeHtml;
+    var chosenCategoryShortName  = chooseRandomCategory(categories);
+    var homeHtmlToInsertIntoMainPage = insertProperty(html, "name", chosenCategoryShortName);
+    html += homeHtmlToInsertIntoMainPage;
+    document.querySelector("#main-content").innerHTML = html;
+
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
