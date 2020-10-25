@@ -76,11 +76,10 @@ $ajaxUtils.sendGetRequest(
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
 
-  // Modified by Meenambiga 
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
-    function (homeHtml) {
+    function (homeHtml) {    
     document.querySelector("#main-content")
       .innerHTML = homeHtml;
     },
