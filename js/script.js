@@ -82,11 +82,10 @@ function buildAndShowHomeHTML (categories) {
     homeHtmlUrl,
     function (homeHtml) {
     //document.querySelector("#main-content").innerHTML = homeHtml;
-
-    var html = homeHtml;
-    var chosenCategoryShortName  = chooseRandomCategory(categories);
-    var homeHtmlToInsertIntoMainPage = insertProperty(html, "name", chosenCategoryShortName);
     
+    var chosenCategoryShortName  = chooseRandomCategory(categories);
+    var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "name", chosenCategoryShortName);
+
     document.querySelector("#main-content").innerHTML = homeHtmlToInsertIntoMainPage;
 
     },
